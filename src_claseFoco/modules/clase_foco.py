@@ -35,12 +35,7 @@ class Foco:
 if __name__ == '__main__':
 
     jorge = Foco("jorge")
-    #angel = Foco("angel")
-    #imelda= Foco("Imelda")
     jorge.met_mostrarNombre()
-    #angel.met_mostrarNombre()
-    #imelda.met_mostrarNombre()
-    #imelda.met_mostrar("prueba")
     jorge.met_estadodefoco()
     jorge.met_encenderfoco()
     jorge.met_estadodefoco()

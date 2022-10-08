@@ -7,24 +7,15 @@ import os
 import logging
 
 from modules.clase_foco import Foco
-#jorge = Foco("Miguel")
-#jorge.met_mostrarNombre()
-#jorge.met_actualizarNombre()
-#jorge.met
-#jorge.met_mostrarNombre()
-#jorge.met_estadodefoco()
-#jorge.met_encenderfoco()
-#jorge.met_estadodefoco()
-#jorge.met_apagarfoco()
-#jorge.met_estadodefoco()
+from modules.clase_foco_mejorado import FocoLed
+
 #__________________________________________________________
 var_salida = False
-
 
 os.system("clear")
 print("Menú de la clase FOCO")
 var_nombre = input("Ingresa un nombre:\n")
-objeto = Foco(var_nombre)
+objeto = FocoLed(var_nombre)
 
 while var_salida is not True:
     os.system("clear")
