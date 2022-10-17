@@ -67,6 +67,15 @@ class PersonalFile():
     def met_archivoEliminar(self):
         os.remove(self.rutaArchivo)
 
+    def met_existe(self, var_direccion):
+        var_existe = os.path.exists(var_direccion)
+        if var_existe == True:
+            print("existe")
+        else:
+            print("no existe")
+
+    def met_existeCarpeta(self):
+        self.met_existe(self.var_directorio)
 
 if __name__ == '__main__':
     objeto = PersonalFile()
@@ -77,3 +86,4 @@ if __name__ == '__main__':
     #objeto.met_archivoVacio()
     #objeto.met_archivoLeer()
 #    objeto.met_archivoEliminar()
+
