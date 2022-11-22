@@ -3,7 +3,8 @@
 # Software version 1.0.0
 
 import os
-class PersonalFile():
+from clase_directorio import Directorio
+class Archivo():
     def __init__(self,
                  var_directorio="./tmp",
                  var_nombreDelArchivo="prueba.txt",
@@ -26,27 +27,6 @@ class PersonalFile():
                 self.met_directorioCrear()
                 self.met_directorioExiste()
 
-    def met_directorioExiste(self):
-        self.var_directorioExiste = os.path.exists(self.var_directorio)
-    def met_directorioCrear(self):
-        os.mkdir(self.var_directorio)
-    def met_dierectorioMostarExiste(self):
-        print(self.var_directorioExiste)
-    def met_directorioVaciar(self, var_eliminarArchivos=False):
-        arr_archivosParaEliminar = os.listdir(self.var_directorio)
-        var_tamArchivosParaEliminar = (len(arr_archivosParaEliminar))
-
-        if var_tamArchivosParaEliminar != 0:
-            print("Los siguientes archivos van a ser Eliminados:")
-            for archivo in arr_archivosParaEliminar:
-                print(archivo)
-
-            if var_eliminarArchivos is True:
-                for archivo in arr_archivosParaEliminar:
-                    os.remove(self.var_directorio + "/" + archivo)
-    def met_directorioEliminar(self):
-        self.met_directorioVaciar(var_eliminarArchivos=True)
-        os.rmdir(self.var_directorio)
 
     def met_archivoCrear(self, arr_texto=["Hola mundo"]):
         f = open(self.rutaArchivo, "w")
@@ -74,16 +54,14 @@ class PersonalFile():
         else:
             print("no existe")
 
-    def met_existeCarpeta(self):
-        self.met_existe(self.var_directorio)
 
 if __name__ == '__main__':
-    objeto = PersonalFile()
+    objeto = Archivo()
     objeto.met_archivoCrear(["buenas tardes", "como les va?"])
     objeto.met_archivoLeer()
     # objeto.met_directorioVaciar(var_eliminarArchivos=True)
     # objeto.met_directorioEliminar()
-    #objeto.met_archivoVacio()
-    #objeto.met_archivoLeer()
-#    objeto.met_archivoEliminar()
+    # objeto.met_archivoVacio()
+    # objeto.met_archivoLeer()
+    # objeto.met_archivoEliminar()
 
